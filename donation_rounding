@@ -1,0 +1,21 @@
+import random
+import statistics
+import math
+
+part=0
+run = 0
+sum_donation1 = 0
+sum_donation2 = 0
+customer = 0
+
+for run in range (10000):
+    customer=(round(random.uniform(1.00, 100.00),2))
+    ceilnum = math.ceil(customer)
+    change = ceilnum - customer
+    sum_donation1 = float(sum_donation1) + float(change)
+    part = random.randint(0,1)
+    if part == 1:
+        sum_donation2 = float(sum_donation2) + float(change)
+
+print(round(sum_donation1,2))
+print(round(sum_donation2,2))
