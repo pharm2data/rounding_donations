@@ -1,0 +1,29 @@
+import random
+import statistics
+import math
+
+run = 0
+sum_donation = 0
+sum_donation1 = 0
+customer = 0
+customer_needed = 0
+customer_needed1 = 0
+
+for run in range (10000):
+    customer=(round(random.uniform(1.00, 100.00),2))
+    ceilnum = math.ceil(customer)
+    change = ceilnum - customer
+    if sum_donation < float(1000.00):
+        sum_donation = float(sum_donation) + float(change)
+        customer_needed = customer_needed +1
+        #print(customer_needed)
+    if sum_donation1 < float(1000.00):
+        part= random.randint(0,1)
+        if part == 1:
+            sum_donation1 = float(sum_donation1) + float(change)
+            customer_needed1 = customer_needed1 + 1
+    if sum_donation >= 1000 and sum_donation1 >= 1000:
+        break
+        
+print("Customers needed for all participated" ,customer_needed)
+print("Customers needed for all participated if only part of the customers participated", customer_needed1)
